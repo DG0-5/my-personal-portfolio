@@ -3,6 +3,70 @@
 {% load static %}
 
 {% block content %}
+<div id="allblogscontainer" data-aos="fade-up" data-aos-delay="100">
+
+  <br>
+  <h1 id="allblogstitle" class="font-weight-bold text-center">Work Experience</h1>
+
+
+  {% for exp in blogs %}
+  <br><br>
+  <div class="row justify-content-center my-3">
+    <div class="col-md-10">
+
+      <a href="{% url 'blog:detail' exp.id %}" id="jobtitle">
+        <h2 id="jobtitle"> {{ exp.companyname }}
+      </a>
+
+      <h4> {{ exp.position }}</h4>
+
+      {% if exp.enddate is not none %}
+      <h6 id='datedate'> {{ exp.startdate|date:'M Y' }} - {{ exp.enddate|date:'M Y' }}</h6>
+      {% else %}
+      <h6 id='datedate'>{{ exp.startdate|date:'M Y'}} - Present </h6>
+      {% endif %}
+
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% comment %} {% extends "portfolio/base.html" %}
+
+{% load static %}
+
+{% block content %}
 
 <div id="allblogscontainer" data-aos="fade-up" data-aos-delay="100">
 
@@ -15,12 +79,12 @@
   <div class="row justify-content-center my-3">
     <div class="col-md-10">
       <a href="{% url 'blog:detail' blog.id %}">
-        <h2>{{ blog.title }}</h2>
+        <h2>{{ blog.position }}</h2>
       </a>
-      <h6 class="text-muted">{{ blog.date|date:'M d Y'|upper }}</h6>
-      <p>{{ blog.description|striptags|truncatechars:100 }}</p>
+      <h6 class="text-muted">{{ blog.date|date:'M Y'|upper }}</h6>
+      <p>{{ blog.jobdescription|striptags|truncatechars:100 }}</p>
     </div>
   </div>
   {% endfor %}
 </div>
-{% endblock %}
+{% endblock %} {% endcomment %}

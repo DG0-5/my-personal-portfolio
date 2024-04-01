@@ -6,7 +6,7 @@
 <div id="allblogscontainer" data-aos="fade-up" data-aos-delay="100">
 
   <br>
-  <h1 id="allblogstitle" class="font-weight-bold text-center">Work Experience</h1>
+  <h1 id="allblogstitle" class="font-weight-bold text-center">Academic Projects</h1>
 
 
   {% for exp in experiences %}
@@ -15,17 +15,15 @@
     <div class="col-md-10">
 
       <a href="{% url 'experience:experience_detail' exp.id %}" id="jobtitle">
-        <h2 id="jobtitle"> {{ exp.companyname }}
+        <h2 id="jobtitle"> {{ exp.title }}
       </a>
 
-      <h4> {{ exp.title }}</h4>
-
-      {% if exp.enddate is not none %}
-      <h6 id='datedate'> {{ exp.startdate|date:'M Y' }} - {{ exp.enddate|date:'M Y' }}</h6>
-      {% else %}
-      <h6 id='datedate'>{{ exp.startdate|date:'M Y'}} - Present </h6>
-      {% endif %}
-
+      <h5>Backend</h5>
+      <h6 id='datedate'> {{ exp.backend }}</h6>
+      <br>
+      <h5>Frontend</h5>
+      <h6 id='datedate'>{{ exp.frontend}}</h6>
+      
     </div>
   </div>
   {% endfor %}

@@ -1,11 +1,15 @@
 from django.db import models
 
-# Create your models here.
+# Work Experience Model
 class Blog(models.Model):
-    title = models.CharField(max_length=75)
-    description = models.CharField(max_length=250)
+    position = models.CharField(max_length=50)
+    companyname = models.CharField(max_length=50, blank=True)
+    startdate = models.DateField(blank=True)
+    enddate = models.DateField(blank=True, null = True)
+    worklocation = models.CharField(max_length=50,blank=True)
+    companydescription = models.TextField(null=True, blank=True)
+    jobdescription = models.TextField(null=True,blank=True)
     url = models.URLField(blank=True)
-    date = models.DateField(blank=True)
 
     def __str__(self):
-        return self.title
+        return self.position

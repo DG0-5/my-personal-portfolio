@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Gopal Godhani</title>
+  <title>Dinesh Godhani</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -32,7 +32,7 @@
     <div class="container">
       <a class="navbar-brand" href="{% url 'home' %}">
         <img src="{% static "portfolio/Logo.png" %}" width="30" height="30" class="d-inline-block align-top" alt="Gopals Logo">
-        <span>Gopal L Godhani</span>
+        <span>Dinesh A Godhani</span>
       </a>
       <div class="collapse navbar-collapse text-center" id="navbarNav">
         <ul class="navbar-nav ml-auto">
@@ -40,16 +40,16 @@
             <a class="nav-link" href="{% static "portfolio/resume.pdf" %}">Resume</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'experience:all_experience' %}">Experience</a>
+            <a role="button" href="{% url 'blog:all_blogs' %}" class="nav-link">Experience</a>
           </li>
           <li>
-            <a role="button" href="{% url 'blog:all_blogs' %}" class="btn btn-primary">Blogs</a>
+            <a class="btn btn-primary" href="{% url 'experience:all_experience' %}">Projects</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
-  {% block content %} {% endblock%}
+  {% block content %} {% endblock %}
 
   <div id="preloader"></div>
   {% load static%}

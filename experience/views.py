@@ -4,7 +4,7 @@ from .models import Experience
 
 
 def all_experience(request):
-    experiences = Experience.objects.order_by('-startdate')
+    experiences = Experience.objects.all()
     return render(request, 'experience/all_experience.html', {'experiences': experiences})
 
 
