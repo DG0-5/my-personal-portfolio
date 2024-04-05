@@ -7,23 +7,22 @@
 
   <div class="container resume-title">
     <a href="{% url 'experience:all_experience' %}" class="goback d-flex align-items-left justify-content-left"><i class="bi bi-arrow-left"></i> Go Back</a>
-
-    <h1 class="text-center mt-5" id="blogdetailtitle">{{ experience.title }}</h1>
-    <div class="social-links text-left mt-5">
-      <a href="{{ e.code }}" class=""><i style="font-size: 20px;" class="bx bxl-github">Code</i></a><br>
-      <a href="{{ e.demo }}" class=""><i style="font-size: 20px;" class="bx bxl-telegram">Demo</i></a>
+    <div class="social-links text-center mt-5">
+      <h1 class="text-center mt-5" id="blogdetailtitle">{{ experience.title }}</h1>
+      <a href="{{ experience.code }}" class=""><i style="font-size: 20px;" class="bx bxl-github">Code</i></a>
+      <br>
     </div>
     <br>
 
-    <p style="font-size: 20px; display: inline;" class="text-left text-muted mb-5"><b>Backend: </b>{{ experience.backend }}&nbsp;&nbsp;|&nbsp;&nbsp;</p>
+    <p style="font-size: 20px; display: inline;" class="text-left text-muted mb-5"><b>Backend: </b>{{ experience.backend }}</p><br><br>
     <p style="font-size: 20px; display: inline;" class="text-left text-muted mb-5"><b>Frontend: </b>{{ experience.frontend }}</p>
     <br><br>
-    <p><strong style="font-size: 20px;">Description: </strong></p>    
     <center>
       <hr>
+      <h4 class="text-center mt-5" style="color:#007bff">Description</h4>
     </center>
-
-    <p style="font-size: 20px; color:#6c757d">{{ experience.description }}</p>
+<br>
+    <p style="font-size: 20px; color:#6c757d">{{ experience.description|safe }}</p>
   
   </div>
 </div>

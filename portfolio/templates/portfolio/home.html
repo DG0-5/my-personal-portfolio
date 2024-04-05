@@ -204,15 +204,14 @@
         {% for e in experience %}
           <div class="resume-item">
             <h4>{{ e.title }}</h4>
-            <p><em>{{ e.description|truncatechars:320 }}</em></p>
+            <p><em>{{ e.description|truncatechars:400|safe }}</em></p>
             <a href="{% url 'experience:experience_detail' e.id %}">Read More <i class="bi bi-book-half"></i></a><br>
             <ul>
               <li><b>Backend:</b> {{ e.backend }}</li>
               <li><b>Frontend:</b> {{ e.frontend }}</li>
             </ul>
             <div class="social-links">
-              <a href="{{ e.code }}" class=""><i style="font-size: 20px;" class="bx bxl-github">Code</i></a>&nbsp;
-              <a href="{{ e.demo }}" class=""><i style="font-size: 20px;" class="bx bxl-telegram">Demo</i></a>
+              <a href="{{ e.code }}" class=""><i style="font-size: 20px;" class="bx bxl-github">Code</i></a>
             </div><br><br>
           </div>
         {% endfor %}
